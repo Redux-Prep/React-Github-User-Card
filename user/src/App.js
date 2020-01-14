@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios'
+import Card from './components/Card'
 
 class App extends Component {
 	constructor () {
@@ -19,18 +20,18 @@ class App extends Component {
       })
   }
 
-  componentWillUnmount(){
+  // componentWillUnmount(){
 
-  } 
+  // } 
 
-  componentDidUpdate() {
+  // componentDidUpdate() {
 
-  }
+  // }
 
 	render () {
 		return (
 			<div className='App'>
-				<h1>Github User Card: {this.state.user.login}</h1>
+				<Card user={this.state.user}/>
 			</div>
 		);
 	}
