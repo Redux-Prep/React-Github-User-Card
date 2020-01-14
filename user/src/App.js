@@ -11,7 +11,12 @@ class App extends Component {
   }
   
   componentDidMount() {
-
+    axios
+      .get('https://api.github.com/users/JustinTrombley96')
+      .then(res => {
+        console.log(res.data)
+        this.setState({user: res.data})
+      })
   }
 
   componentWillUnmount(){
@@ -25,7 +30,7 @@ class App extends Component {
 	render () {
 		return (
 			<div className='App'>
-				<h1>Github User Card</h1>
+				<h1>Github User Card: {this.state.user.login}</h1>
 			</div>
 		);
 	}
